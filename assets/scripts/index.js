@@ -28,7 +28,7 @@ require('./example')
 // Below is the logic for the game-board, which is also linked to the game-text
 $('#game-board').on('click', function (event) {
   // Want a variable that capture the value of game-text before each move
-  let lastTurn = $('#game-text').text()
+  const lastTurn = $('#game-text').text()
   console.log(lastTurn)
   // Changes box to show X
   if (lastTurn === 'Your move Player 2') {
