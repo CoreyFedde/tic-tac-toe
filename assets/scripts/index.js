@@ -101,20 +101,13 @@ $('#check-win').on('click', function () {
 
 // Below is the logic for the game-board, which is also linked to the game-text
 $('#game-board').on('click', function (event) {
-  // Want a variable that capture the value of game-text before each move
-  const lastTurn = $('#game-text').text()
-  console.log(lastTurn)
-  // Changes box to show X
-  if (lastTurn === 'Your move Player 2') {
-    // Changes box to show O
-        // $('#game-board').on('click', function (event) {
+  if (turnCounter % 2 === 0) {
     const value = $(event.target).text()
     if (value === '') {
       $(event.target).text('O')
       $('#game-text').text('Your move Player 1')
       turnCounter++
       console.log(turnCounter)
-          // } else ($('#game-text').text('INVALID MOVE... and you looked so competent before'))
     }
   } else {
     const value = $(event.target).text()
@@ -123,10 +116,37 @@ $('#game-board').on('click', function (event) {
       $('#game-text').text('Your move Player 2')
       turnCounter++
       console.log(turnCounter)
-    // } else ($('#game-text').text('INVALID MOVE MORON'))
     }
   }
 })
+
+// $('#game-board').on('click', function (event) {
+//   // Want a variable that capture the value of game-text before each move
+//   const lastTurn = $('#game-text').text()
+//   console.log(lastTurn)
+//   // Changes box to show X
+//   if (lastTurn === 'Your move Player 2') {
+//     // Changes box to show O
+//         // $('#game-board').on('click', function (event) {
+//     const value = $(event.target).text()
+//     if (value === '') {
+//       $(event.target).text('O')
+//       $('#game-text').text('Your move Player 1')
+//       turnCounter++
+//       console.log(turnCounter)
+//           // } else ($('#game-text').text('INVALID MOVE... and you looked so competent before'))
+//     }
+//   } else {
+//     const value = $(event.target).text()
+//     if (value === '') {
+//       $(event.target).text('X')
+//       $('#game-text').text('Your move Player 2')
+//       turnCounter++
+//       console.log(turnCounter)
+//     // } else ($('#game-text').text('INVALID MOVE MORON'))
+//     }
+//   }
+// })
 
 // New Game button, which should reset all squares to have a value of "''" and allow the users to start playing
 $('#new-game-button').on('click', function (event) {
@@ -140,12 +160,13 @@ $('#new-game-button').on('click', function (event) {
 })
 
 // Hiding for the modals and button until logged in
-if (loggedIn){
+if ('loggedIn') {
   $('#sign-out-button').show()
   $('#change-password-button').show()
 } else {
-$('#sign-out-button').hide()
-$('#change-password-button').hide() }
+  $('#sign-out-button').hide()
+  $('#change-password-button').hide()
+}
 
 // Turn counter. If turns = 9 then the game is over. If turns > 3, check to see
 // if anyone has won.
