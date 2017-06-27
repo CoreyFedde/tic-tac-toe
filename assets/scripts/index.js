@@ -13,9 +13,17 @@ $(() => {
 // use require without a reference to ensure a file is bundled
 require('./example')
 
+const win = ($('#box-1').val() === $('#box-2').val() === $('#box-3').val()) ||
+($('#box-1').val() === $('#box-4').val() === $('#box-7').val()) ||
+($('#box-1').val() === $('#box-5').val() === $('#box-9').val()) ||
+($('#box-3').val() === $('#box-5').val() === $('#box-7').val()) ||
+($('#box-3').val() === $('#box-6').val() === $('#box-9').val()) ||
+($('#box-7').val() === $('#box-8').val() === $('#box-9').val()) ||
+($('#box-2').val() === $('#box-5').val() === $('#box-8').val())
+
 $('#game-board').on('click', function (event) {
   // Want a variable that capture the value of game-text before each move
-  let lastTurn = $('#game-text').text()
+  const lastTurn = $('#game-text').text()
   console.log(lastTurn)
   // Changes box to show X
   if (lastTurn === 'Your move Player 1' || '') {
@@ -36,3 +44,7 @@ $('#game-board').on('click', function (event) {
     }
   }
 })
+
+if (win === true) {
+  console.log('Game Over')
+}
