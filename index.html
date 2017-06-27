@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <nav class="navbar navbar-default">
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -23,55 +24,58 @@
       </button>
       <a class="navbar-brand" href="#">Brand</a>
     </div>
-    <!-- Indicates a dangerous or potentially negative action -->
-    <button type="button" class="btn btn-danger navbar-btn navbar-right">Sign out</button>
-    <!-- Button for Modal -->
-    <button type="button" class="btn btn-success navbar-btn navbar-right" data-toggle="modal" data-target="#myModal">Sign In</button>
+    <!-- button for sign out -->
+    <button id="sign-out-button" type="button" class="btn btn-danger navbar-btn navbar-right">Sign out</button>
+    <!-- Button for change password -->
+    <button id="change-password-button" type="button" class="btn btn-info navbar-btn navbar-right" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
+    <!-- Button for sign in -->
+    <button type="button" class="btn btn-success navbar-btn navbar-right" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
     <!-- Collect the nav links, forms, and other content for toggling -->
-  </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.container-fluid -->
 </nav>
-  <div class="container">
-    <div class="row">
-      <div id="game-title" class="col-sm-8 box game-title-box">
-        <h1>Tic-Tac-I need a better title</h1>
-      </div>
+<div class="container">
+  <div class="row">
+    <div id="game-title" class="col-sm-8 box game-title-box">
+      <h1>Tic-Tac-I need a better title</h1>
     </div>
   </div>
-    <!-- Game Text Box -->
-    <div class="container">
-      <div class="row">
-        <div id="game-text" class="col-sm-6 box game-text-box">
-          <h3>Game Text</h3>
-        </div>
-      </div>
+</div>
+<!-- Game Text Box -->
+<div class="container">
+  <div class="row">
+    <div id="game-text" class="col-sm-6 box game-text-box">
+      <h3>Game Text</h3>
     </div>
-    <!-- Gameboard -->
-      <!-- Center block should help center, but am having trouble -->
-      <div id="game-board" class="container">
-        <div class="row">
-          <div id="box-1" class="col-xs-2 box game"></div>
-          <div id="box-2" class="col-xs-2 box game"></div>
-          <div id="box-3" class="col-xs-2 box game"></div>
-        </div>
-        <div class="row">
-          <div id="box-4" class="col-xs-2 box game"></div>
-          <div id="box-5" class="col-xs-2 box game"></div>
-          <div id="box-6" class="col-xs-2 box game"></div>
-        </div>
-        <div class="row">
-          <div id="box-7" class="col-xs-2 box game"></div>
-          <div id="box-8" class="col-xs-2 box game"></div>
-          <div id="box-9" class="col-xs-2 box game"></div>
-        </div>
-      </div>
-      <!-- Standard button for new game -->
+  </div>
+</div>
+<!-- Gameboard -->
+<!-- Center block should help center, but am having trouble -->
+<div id="game-board" class="container">
+  <div class="row">
+    <div id="box-1" class="col-xs-2 box game"></div>
+    <div id="box-2" class="col-xs-2 box game"></div>
+    <div id="box-3" class="col-xs-2 box game"></div>
+  </div>
+  <div class="row">
+    <div id="box-4" class="col-xs-2 box game"></div>
+    <div id="box-5" class="col-xs-2 box game"></div>
+    <div id="box-6" class="col-xs-2 box game"></div>
+  </div>
+  <div class="row">
+    <div id="box-7" class="col-xs-2 box game"></div>
+    <div id="box-8" class="col-xs-2 box game"></div>
+    <div id="box-9" class="col-xs-2 box game"></div>
+  </div>
+</div>
+<!-- Standard button for new game -->
 <button id="new-game-button" type="button" class="btn btn-default">New Game</button>
 <div id="check-win" class="box">Check win</div>
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- Sign in -->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -80,34 +84,34 @@
       </div>
       <div class="modal-body">
         <form>
-  <div class="form-group">
-    <fieldset>
-      <legend>Sign In</legend>
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</fieldset>
-</form>
-<h2>OR</h2>
-<form>
-<div class="form-group">
-<fieldset>
-<legend>Sign Up</legend>
-<label for="exampleInputEmail1">Email address</label>
-<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-</div>
-<div class="form-group">
-<label for="exampleInputPassword1">Password</label>
-<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-</div>
-<button type="submit" class="btn btn-default">Submit</button>
-</fieldset>
-</form>
+          <div class="form-group">
+            <fieldset>
+              <legend>Sign In</legend>
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+          </fieldset>
+        </form>
+        <h2>OR</h2>
+        <form>
+          <div class="form-group">
+            <fieldset>
+              <legend>Sign Up</legend>
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+          </fieldset>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -116,4 +120,40 @@
     </div>
   </div>
 </div>
+<!-- change password -->
+<div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <fieldset>
+              <legend>Change Password</legend>
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Current Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">New Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </html>

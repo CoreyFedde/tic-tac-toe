@@ -139,6 +139,14 @@ $('#new-game-button').on('click', function (event) {
   })
 })
 
+// Hiding for the modals and button until logged in
+if (loggedIn){
+  $('#sign-out-button').show()
+  $('#change-password-button').show()
+} else {
+$('#sign-out-button').hide()
+$('#change-password-button').hide() }
+
 // Turn counter. If turns = 9 then the game is over. If turns > 3, check to see
 // if anyone has won.
 // $('.game').each(function () {
