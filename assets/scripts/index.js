@@ -39,14 +39,13 @@ $('#game-board').on('click', function (event) {
       $(event.target).text('O')
       $('#game-text').text('Your move Player 1')
           // } else ($('#game-text').text('INVALID MOVE... and you looked so competent before'))
-        }
+    }
   } else {
     const value = $(event.target).text()
     if (value === '') {
       $(event.target).text('X')
       $('#game-text').text('Your move Player 2')
     // } else ($('#game-text').text('INVALID MOVE MORON'))
-      console.log(lastTurn)
     }
   }
 })
@@ -55,4 +54,8 @@ $('#game-board').on('click', function (event) {
 $('#new-game-button').on('click', function (event) {
   console.log('button clicked')
   $('#game-text').text('New game!')
+  // Create an array to represent the game-board
+  $('.game').each(function () {
+    $(this).text('')
+  })
 })
