@@ -39,83 +39,131 @@ require('./example')
 
 let turnCounter = 0
 
-$('#check-win').on('click', function () {
-  console.log('clicked')
-  console.log(turnCounter)
+const checkWin = function () {
+  // $('#check-win').on('click', function () {
+  //   console.log('clicked')
+  // console.log(turnCounter)
   let boxOne = $('#box-1').text()
-  console.log(boxOne)
+  // console.log(boxOne)
   let boxTwo = $('#box-2').text()
-  console.log(boxTwo)
+  // console.log(boxTwo)
   let boxThree = $('#box-3').text()
-  console.log(boxThree)
+  // console.log(boxThree)
   let boxFour = $('#box-4').text()
-  console.log(boxFour)
+  // console.log(boxFour)
   let boxFive = $('#box-5').text()
-  console.log(boxFive)
+  // console.log(boxFive)
   let boxSix = $('#box-6').text()
-  console.log(boxSix)
+  // console.log(boxSix)
   let boxSeven = $('#box-7').text()
-  console.log(boxSeven)
+  // console.log(boxSeven)
   let boxEight = $('#box-8').text()
-  console.log(boxEight)
+  // console.log(boxEight)
   let boxNine = $('#box-9').text()
-  console.log(boxNine)
+  // console.log(boxNine)
   // Horizontal wins
   if (turnCounter > 3) {
-    console.log('hor 1 works')
-    console.log('this is boxOne: ', boxOne)
-    console.log('this is boxTwo: ', boxTwo)
-    console.log('this is boxthree: ', boxThree)
-    if (boxOne === boxTwo === boxThree) {
-      console.log('Game over becuase of first line')
+    if (boxOne !== '' && boxTwo !== '' && boxThree !== '') {
+      if (boxOne === boxTwo && boxTwo === boxThree) {
+        if (boxOne === 'X') {
+          $('#game-text').text('Player 1 wins')
+        } else {
+          $('#game-text').text('Play 2 wins')
+        }
+      }
     }
-    if (boxFour === boxFive === boxSix) {
-      console.log('Game over because of second line!')
+    if (boxFour !== '' && boxFive !== '' && boxSix !== '') {
+      if (boxFour === boxFive && boxFive === boxSix) {
+        if (boxOne === 'X') {
+          $('#game-text').text('Player 1 wins')
+        } else {
+          $('#game-text').text('Play 2 wins')
+        }
+      }
     }
-    if (boxSeven === boxEight === boxNine) {
-      console.log('Game over because of third line!')
+    if (boxSeven !== '' && boxEight !== '' && boxNine !== '') {
+      if (boxSeven === boxEight && boxEight === boxNine) {
+        if (boxOne === 'X') {
+          $('#game-text').text('Player 1 wins')
+        } else {
+          $('#game-text').text('Play 2 wins')
+        }
+      }
     }
       // Vertical wins
-    if (boxOne === boxFour === boxSeven) {
-      console.log('Game over of fourth line!')
+    if (boxOne !== '' && boxFour !== '' && boxSeven !== '') {
+      if (boxOne === boxFour && boxFour === boxSeven) {
+        if (boxOne === 'X') {
+          $('#game-text').text('Player 1 wins')
+        } else {
+          $('#game-text').text('Play 2 wins')
+        }
+      }
     }
-    if (boxTwo === boxFive === boxEight) {
-      console.log('Game over of fifth line!')
+    if (boxTwo !== '' && boxFive !== '' && boxEight !== '') {
+      if (boxTwo === boxFive && boxFive === boxEight) {
+        if (boxOne === 'X') {
+          $('#game-text').text('Player 1 wins')
+        } else {
+          $('#game-text').text('Play 2 wins')
+        }
+      }
     }
-    if (boxThree === boxSix === boxNine) {
-      console.log('Game over of sixth line!')
+    if (boxThree !== '' && boxSix !== '' && boxNine !== '') {
+      if (boxThree === boxSix && boxSix === boxNine) {
+        if (boxOne === 'X') {
+          $('#game-text').text('Player 1 wins')
+        } else {
+          $('#game-text').text('Play 2 wins')
+        }
+      }
     }
     // Diagnol wins
-    if (boxOne === boxFive === boxNine) {
-      console.log('Game over of seventh line!')
+    if (boxOne !== '' && boxFive !== '' && boxNine !== '') {
+      if (boxOne === boxFive && boxFive === boxNine) {
+        if (boxOne === 'X') {
+          $('#game-text').text('Player 1 wins')
+        } else {
+          $('#game-text').text('Play 2 wins')
+        }
+      }
     }
-    if (boxThree === boxFive === boxSeven) {
-      console.log('Game over of eight line!')
+    if (boxThree !== '' && boxFive !== '' && boxSeven !== '') {
+      if (boxThree === boxFive && boxFive === boxSeven) {
+        if (boxOne === 'X') {
+          $('#game-text').text('Player 1 wins')
+        } else {
+          $('#game-text').text('Play 2 wins')
+        }
+      }
     }
   }
-  // Maximum amount of moves
+// Maximum amount of moves
   if (turnCounter === 9) {
-    console.log('Game over 9!')
+    $('#game-text').text("Cat's Game!")
   }
-})
+  // })
+}
 
 // Below is the logic for the game-board, which is also linked to the game-text
 $('#game-board').on('click', function (event) {
   if (turnCounter % 2 === 0) {
     const value = $(event.target).text()
     if (value === '') {
-      $(event.target).text('O')
-      $('#game-text').text('Your move Player 1')
-      turnCounter++
-      console.log(turnCounter)
-    }
-  } else {
-    const value = $(event.target).text()
-    if (value === '') {
       $(event.target).text('X')
       $('#game-text').text('Your move Player 2')
       turnCounter++
       console.log(turnCounter)
+      checkWin()
+    }
+  } else {
+    const value = $(event.target).text()
+    if (value === '') {
+      $(event.target).text('O')
+      $('#game-text').text('Your move Player 1')
+      turnCounter++
+      console.log(turnCounter)
+      checkWin()
     }
   }
 })
