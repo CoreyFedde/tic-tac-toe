@@ -43,23 +43,23 @@ const checkWin = function () {
   // $('#check-win').on('click', function () {
   //   console.log('clicked')
   // console.log(turnCounter)
-  let boxOne = $('#box-1').text()
+  const boxOne = $('#box-1').text()
   // console.log(boxOne)
-  let boxTwo = $('#box-2').text()
+  const boxTwo = $('#box-2').text()
   // console.log(boxTwo)
-  let boxThree = $('#box-3').text()
+  const boxThree = $('#box-3').text()
   // console.log(boxThree)
-  let boxFour = $('#box-4').text()
+  const boxFour = $('#box-4').text()
   // console.log(boxFour)
-  let boxFive = $('#box-5').text()
+  const boxFive = $('#box-5').text()
   // console.log(boxFive)
-  let boxSix = $('#box-6').text()
+  const boxSix = $('#box-6').text()
   // console.log(boxSix)
-  let boxSeven = $('#box-7').text()
+  const boxSeven = $('#box-7').text()
   // console.log(boxSeven)
-  let boxEight = $('#box-8').text()
+  const boxEight = $('#box-8').text()
   // console.log(boxEight)
-  let boxNine = $('#box-9').text()
+  const boxNine = $('#box-9').text()
   // console.log(boxNine)
   // Horizontal wins
   if (turnCounter > 3) {
@@ -67,26 +67,44 @@ const checkWin = function () {
       if (boxOne === boxTwo && boxTwo === boxThree) {
         if (boxOne === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('.game').each(function () {
+            $(this).text('Player 1 wins')
+          })
         } else {
           $('#game-text').text('Play 2 wins')
+          $('.game').each(function () {
+            $(this).text('Player 2 wins')
+          })
         }
       }
     }
     if (boxFour !== '' && boxFive !== '' && boxSix !== '') {
       if (boxFour === boxFive && boxFive === boxSix) {
-        if (boxOne === 'X') {
+        if (boxFour === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('.game').each(function () {
+            $(this).text('Player 1 wins')
+          })
         } else {
           $('#game-text').text('Play 2 wins')
+          $('.game').each(function () {
+            $(this).text('Player 2 wins')
+          })
         }
       }
     }
     if (boxSeven !== '' && boxEight !== '' && boxNine !== '') {
       if (boxSeven === boxEight && boxEight === boxNine) {
-        if (boxOne === 'X') {
+        if (boxSeven === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('.game').each(function () {
+            $(this).text('Player 1 wins')
+          })
         } else {
           $('#game-text').text('Play 2 wins')
+          $('.game').each(function () {
+            $(this).text('Player 2 wins')
+          })
         }
       }
     }
@@ -95,26 +113,44 @@ const checkWin = function () {
       if (boxOne === boxFour && boxFour === boxSeven) {
         if (boxOne === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('.game').each(function () {
+            $(this).text('Player 1 wins')
+          })
         } else {
           $('#game-text').text('Play 2 wins')
+          $('.game').each(function () {
+            $(this).text('Player 2 wins')
+          })
         }
       }
     }
     if (boxTwo !== '' && boxFive !== '' && boxEight !== '') {
       if (boxTwo === boxFive && boxFive === boxEight) {
-        if (boxOne === 'X') {
+        if (boxTwo === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('.game').each(function () {
+            $(this).text('Player 1 wins')
+          })
         } else {
           $('#game-text').text('Play 2 wins')
+          $('.game').each(function () {
+            $(this).text('Player 2 wins')
+          })
         }
       }
     }
     if (boxThree !== '' && boxSix !== '' && boxNine !== '') {
       if (boxThree === boxSix && boxSix === boxNine) {
-        if (boxOne === 'X') {
+        if (boxThree === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('.game').each(function () {
+            $(this).text('Player 1 wins')
+          })
         } else {
           $('#game-text').text('Play 2 wins')
+          $('.game').each(function () {
+            $(this).text('Player 2 wins')
+          })
         }
       }
     }
@@ -123,17 +159,30 @@ const checkWin = function () {
       if (boxOne === boxFive && boxFive === boxNine) {
         if (boxOne === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('.game').each(function () {
+            $(this).text('Player 1 wins')
+          })
         } else {
           $('#game-text').text('Play 2 wins')
+          $('.game').each(function () {
+            $(this).text('Player 2 wins')
+          })
         }
       }
     }
+    // for some reason player 1 is always winning
     if (boxThree !== '' && boxFive !== '' && boxSeven !== '') {
       if (boxThree === boxFive && boxFive === boxSeven) {
-        if (boxOne === 'X') {
+        if (boxThree === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('.game').each(function () {
+            $(this).text('Player 1 wins')
+          })
         } else {
           $('#game-text').text('Play 2 wins')
+          $('.game').each(function () {
+            $(this).text('Player 2 wins')
+          })
         }
       }
     }
@@ -141,6 +190,9 @@ const checkWin = function () {
 // Maximum amount of moves
   if (turnCounter === 9) {
     $('#game-text').text("Cat's Game!")
+    $('.game').each(function () {
+      $(this).text("Cat's Game!")
+    })
   }
   // })
 }
