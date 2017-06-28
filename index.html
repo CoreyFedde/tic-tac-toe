@@ -88,11 +88,11 @@
             <fieldset>
               <legend>Sign In</legend>
               <label for="exampleInputEmail1">Email address</label>
-              <input name="credentials[email]" type="text" class="form-control" id="exampleInputEmail1" value="an@example.email" placeholder="Email">
+              <input name="credentials[email]" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input name="credentials[password]" type="password" class="form-control" id="exampleInputPassword1" value="an example password" placeholder="Password">
+            <input name="credentials[password]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
           </fieldset>
@@ -104,15 +104,15 @@
             <fieldset>
               <legend>Sign Up</legend>
               <label for="exampleInputEmail1">Email address</label>
-              <input name="credentials[email]" type="text" class="form-control" id="exampleInputEmail1" value="an@example.email" placeholder="Email">
+              <input name="credentials[email]" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input name="credentials[password]" type="password" class="form-control" id="exampleInputPassword1" value="an example password" placeholder="Password">
+            <input name="credentials[password]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Confirm Password</label>
-            <input name="credentials[password_confirmation]" type="password" class="form-control" id="confirmExampleInputPassword1" value="an example password" placeholder="Password">
+            <input name="credentials[password_confirmation]" type="password" class="form-control" id="confirmExampleInputPassword1"  placeholder="Password">
           </div>
           <button id="submitSignUp" type="submit" class="btn btn-default">Submit</button>
           </fieldset>
@@ -135,19 +135,15 @@
       </div>
       <div class="modal-body">
         <form id="changePasswordForm">
-          <div class="form-group">
             <fieldset>
               <legend>Change Password</legend>
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-          </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Current Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input name="passwords[old]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Current Password">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">New Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input name="passwords[new]" type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password">
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
           </fieldset>
