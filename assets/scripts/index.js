@@ -6,6 +6,7 @@ const config = require('./config')
 const logic = require('./game/logic.js')
 const ui = require('./game/ui.js')
 const api = require('./game/api.js')
+const gameActions = require('./game/gameActions.js')
 
 $(() => {
   ui.hideButtons()
@@ -16,7 +17,7 @@ $(() => {
   $('#signInForm').on('submit', api.onLogIn)
   $('#changePasswordForm').on('submit', api.onChangePassword)
   $('#sign-out-button').on('click', api.onLogOut)
-  $('')
+  $('#gameActionButton').on('click', gameActions.createNewGame)
 })
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
