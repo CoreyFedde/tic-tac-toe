@@ -1,2 +1,22 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.box {
+  border: thin solid black;
+  height: 50px;
+}
+
+.game {
+  height: 150px;
+  text-align: center;
+}
+
+.game-text-box {
+  height: 75px;
+  text-align: center;
+}
+
+.game-title-box {
+  height: 100px;
+  text-align: center;
+}
