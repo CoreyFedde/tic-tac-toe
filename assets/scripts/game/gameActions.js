@@ -5,6 +5,10 @@ const config = require('../config.js')
 const ui = require('./ui.js')
 const save = require('../save.js')
 
+const gameStatus = {
+  over: false
+}
+
 const newGame = function () {
   return $.ajax({
     url: config.apiOrigin + '/games/',
@@ -13,6 +17,39 @@ const newGame = function () {
       Authorization: 'Token token=' + store.user.token
     },
     data: {}
+  })
+}
+
+const stats = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const gameUpdates = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + save.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const getStats = function (event) {
+  event.preventDefault()
+  stats()
+  .then(function (data) {
+    console.log('success')
+    console.log(data.games.length)
+  })
+  .catch(function (data) {
+    console.log('Nope')
   })
 }
 
@@ -32,7 +69,33 @@ const createNewGame = function (event) {
   })
 }
 
+const getGameUpdates = function () {
+  event.preventDefault()
+  console.log(save.game.id)
+  const currIndex = $('.game').index(event.target)
+  const newValue = $(event.target).text()
+  const data = {
+    'game': {
+      'cell': {
+        'index': currIndex,
+        'value': newValue
+      },
+      'over': gameStatus.over
+    }
+  }
+  gameUpdates(data)
+    .then(function (data) {
+      console.log('Success')
+      console.log(data)
+    })
+    .catch(function (data) {
+      console.log('Nope')
+    })
+}
 
 module.exports = {
-  createNewGame
+  createNewGame,
+  getStats,
+  getGameUpdates,
+  gameStatus
 }
