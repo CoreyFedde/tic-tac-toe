@@ -1,8 +1,6 @@
 'use strict'
-const getFormFields = require('../../../lib/get-form-fields.js')
 const store = require('../store.js')
 const config = require('../config.js')
-const ui = require('./ui.js')
 const save = require('../save.js')
 
 const gameStatus = {
@@ -44,11 +42,9 @@ const gameUpdates = function (data) {
 const getStats = function (event) {
   stats()
   .then(function (data) {
-    console.log('success')
     $('#gamesDisplay').text(data.games.length)
   })
   .catch(function (data) {
-    console.log('Nope')
   })
 }
 
@@ -56,17 +52,14 @@ const createNewGame = function (event) {
   event.preventDefault()
   newGame()
   .then(function (data) {
-    console.log('Success')
     save.game = data.game
   })
   .catch(function (data) {
-    console.log('Nope')
   })
 }
 
 const getGameUpdates = function () {
   event.preventDefault()
-  console.log(save.game.id)
   const currIndex = $('.game').index(event.target)
   const newValue = $(event.target).text()
   const data = {
@@ -80,11 +73,8 @@ const getGameUpdates = function () {
   }
   gameUpdates(data)
     .then(function (data) {
-      console.log('Success')
-      console.log(data)
     })
     .catch(function (data) {
-      console.log('Nope')
     })
 }
 
@@ -92,5 +82,5 @@ module.exports = {
   createNewGame,
   getStats,
   getGameUpdates,
-  gameStatus,
+  gameStatus
 }
