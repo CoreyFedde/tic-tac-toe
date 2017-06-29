@@ -3,32 +3,16 @@ const gameActions = require('./gameActions.js')
 
 let turnCounter = 0
 
-// gameStatus = true
-// console.log(gameStatus)
-// gameActions.getGameUpdates()
-
 const checkWin = function () {
-  // $('#check-win').on('click', function () {
-  //   console.log('clicked')
-  // console.log(turnCounter)
   const boxOne = $('#box-1').text()
-  // console.log(boxOne)
   const boxTwo = $('#box-2').text()
-  // console.log(boxTwo)
   const boxThree = $('#box-3').text()
-  // console.log(boxThree)
   const boxFour = $('#box-4').text()
-  // console.log(boxFour)
   const boxFive = $('#box-5').text()
-  // console.log(boxFive)
   const boxSix = $('#box-6').text()
-  // console.log(boxSix)
   const boxSeven = $('#box-7').text()
-  // console.log(boxSeven)
   const boxEight = $('#box-8').text()
-  // console.log(boxEight)
   const boxNine = $('#box-9').text()
-  // console.log(boxNine)
   // Horizontal wins
   if (turnCounter > 3) {
     if (boxOne !== '' && boxTwo !== '' && boxThree !== '') {
@@ -117,7 +101,6 @@ const checkWin = function () {
         gameActions.gameStatus.over = true
       }
     }
-    // for some reason player 1 is always winning
     if (boxThree !== '' && boxFive !== '' && boxSeven !== '') {
       if (boxThree === boxFive && boxFive === boxSeven) {
         if (boxThree === 'X') {
@@ -131,14 +114,13 @@ const checkWin = function () {
       }
     }
   }
-// Maximum amount of moves
+// Maximum amount of moves == Cat's Game
   if (turnCounter === 9) {
     gameActions.gameStatus.over = true
     gameActions.getGameUpdates()
     $('#game-text').text("Cat's Game!")
     $('#game-board').off()
   }
-  // })
 }
 
 // Below is the logic for the game-board, which is also linked to the game-text
@@ -148,9 +130,7 @@ const turnLogic = function (event) {
     if (value === '') {
       $(event.target).text('X')
       $('#game-text').text('Your move Player 2')
-      console.log(turnCounter)
       checkWin()
-      console.log('this is game status:', gameActions.gameStatus.over)
       gameActions.getGameUpdates()
       turnCounter++
     }
@@ -159,53 +139,24 @@ const turnLogic = function (event) {
     if (value === '') {
       $(event.target).text('O')
       $('#game-text').text('Your move Player 1')
-      console.log(turnCounter)
       checkWin()
-      console.log('this is game status:', gameActions.gameStatus.over)
       gameActions.getGameUpdates()
       turnCounter++
     }
   }
 }
+
 // New Game button, which should reset all squares to have a value of "''" and allow the users to start playing
 const getNewGame = function (event) {
-  console.log('button clicked')
   $('#game-text').text('New game!')
   turnCounter = 0
   // Create an array to represent the game-board
   $('.game').each(function () {
     $(this).text('')
   })
+  // this line updates the stat box
   gameActions.getStats()
 }
-
-// $('#game-board').on('click', function (event) {
-//   // Want a variable that capture the value of game-text before each move
-//   const lastTurn = $('#game-text').text()
-//   console.log(lastTurn)
-//   // Changes box to show X
-//   if (lastTurn === 'Your move Player 2') {
-//     // Changes box to show O
-//         // $('#game-board').on('click', function (event) {
-//     const value = $(event.target).text()
-//     if (value === '') {
-//       $(event.target).text('O')
-//       $('#game-text').text('Your move Player 1')
-//       turnCounter++
-//       console.log(turnCounter)
-//           // } else ($('#game-text').text('INVALID MOVE... and you looked so competent before'))
-//     }
-//   } else {
-//     const value = $(event.target).text()
-//     if (value === '') {
-//       $(event.target).text('X')
-//       $('#game-text').text('Your move Player 2')
-//       turnCounter++
-//       console.log(turnCounter)
-//     // } else ($('#game-text').text('INVALID MOVE MORON'))
-//     }
-//   }
-// })
 
 module.exports = {
   turnCounter,
