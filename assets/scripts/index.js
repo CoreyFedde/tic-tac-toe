@@ -11,7 +11,6 @@ const gameActions = require('./game/gameActions.js')
 $(() => {
   ui.hideButtons()
   setAPIOrigin(location, config)
-  $('.game').on('click', logic.turnLogic)
   $('#new-game-button').on('click', logic.getNewGame)
   $('#signUpForm').on('submit', api.onSignUp)
   $('#signInForm').on('submit', api.onLogIn)
