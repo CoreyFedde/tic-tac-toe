@@ -19,10 +19,10 @@ const checkWin = function () {
       if (boxOne === boxTwo && boxTwo === boxThree) {
         if (boxOne === 'X') {
           $('#game-text').text('Player 1 wins')
-          $('#game-board').off()
+          $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
-          $('#game-board').off()
+          $('.game').off()
         }
         gameActions.gameStatus.over = true
       }
@@ -31,10 +31,10 @@ const checkWin = function () {
       if (boxFour === boxFive && boxFive === boxSix) {
         if (boxFour === 'X') {
           $('#game-text').text('Player 1 wins')
-          $('#game-board').off()
+          $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
-          $('#game-board').off()
+          $('.game').off()
         }
         gameActions.gameStatus.over = true
       }
@@ -43,10 +43,10 @@ const checkWin = function () {
       if (boxSeven === boxEight && boxEight === boxNine) {
         if (boxSeven === 'X') {
           $('#game-text').text('Player 1 wins')
-          $('#game-board').off()
+          $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
-          $('#game-board').off()
+          $('.game').off()
         }
         gameActions.gameStatus.over = true
       }
@@ -56,10 +56,10 @@ const checkWin = function () {
       if (boxOne === boxFour && boxFour === boxSeven) {
         if (boxOne === 'X') {
           $('#game-text').text('Player 1 wins')
-          $('#game-board').off()
+          $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
-          $('#game-board').off()
+          $('.game').off()
         }
         gameActions.gameStatus.over = true
       }
@@ -68,10 +68,10 @@ const checkWin = function () {
       if (boxTwo === boxFive && boxFive === boxEight) {
         if (boxTwo === 'X') {
           $('#game-text').text('Player 1 wins')
-          $('#game-board').off()
+          $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
-          $('#game-board').off()
+          $('.game').off()
         }
         gameActions.gameStatus.over = true
       }
@@ -80,10 +80,10 @@ const checkWin = function () {
       if (boxThree === boxSix && boxSix === boxNine) {
         if (boxThree === 'X') {
           $('#game-text').text('Player 1 wins')
-          $('#game-board').off()
+          $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
-          $('#game-board').off()
+          $('.game').off()
         }
         gameActions.gameStatus.over = true
       }
@@ -93,10 +93,10 @@ const checkWin = function () {
       if (boxOne === boxFive && boxFive === boxNine) {
         if (boxOne === 'X') {
           $('#game-text').text('Player 1 wins')
-          $('#game-board').off()
+          $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
-          $('#game-board').off()
+          $('.game').off()
         }
         gameActions.gameStatus.over = true
       }
@@ -105,10 +105,10 @@ const checkWin = function () {
       if (boxThree === boxFive && boxFive === boxSeven) {
         if (boxThree === 'X') {
           $('#game-text').text('Player 1 wins')
-          $('#game-board').off()
+          $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
-          $('#game-board').off()
+          $('.game').off()
         }
         gameActions.gameStatus.over = true
       }
@@ -119,7 +119,7 @@ const checkWin = function () {
     gameActions.gameStatus.over = true
     gameActions.getGameUpdates()
     $('#game-text').text("Cat's Game!")
-    $('#game-board').off()
+    $('.game').off()
   }
 }
 
@@ -156,6 +156,7 @@ const getNewGame = function (event) {
   })
   // this line updates the stat box
   gameActions.getStats()
+  $('.game').on('click', turnLogic)
 }
 
 module.exports = {
