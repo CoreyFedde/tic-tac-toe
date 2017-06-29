@@ -42,11 +42,10 @@ const gameUpdates = function (data) {
 }
 
 const getStats = function (event) {
-  event.preventDefault()
   stats()
   .then(function (data) {
     console.log('success')
-    console.log(data.games.length)
+    $('#gamesDisplay').text(data.games.length)
   })
   .catch(function (data) {
     console.log('Nope')
@@ -59,10 +58,6 @@ const createNewGame = function (event) {
   .then(function (data) {
     console.log('Success')
     save.game = data.game
-    console.log('this is the data.game: ', data)
-    console.log('this is the data.game.id: ', data.game.id)
-    console.log('this is the save.game ', save.game)
-    console.log('this is the save.game.id ', save.game.id)
   })
   .catch(function (data) {
     console.log('Nope')
@@ -97,5 +92,5 @@ module.exports = {
   createNewGame,
   getStats,
   getGameUpdates,
-  gameStatus
+  gameStatus,
 }

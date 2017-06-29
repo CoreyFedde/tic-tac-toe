@@ -53,7 +53,6 @@ const checkWin = function () {
           $('#game-board').off()
         }
         gameActions.gameStatus.over = true
-        console.log('this is the fucking gameActions.gameStatus.over from the win: ', gameActions.gameStatus.over)
       }
     }
     if (boxSeven !== '' && boxEight !== '' && boxNine !== '') {
@@ -66,7 +65,6 @@ const checkWin = function () {
           $('#game-board').off()
         }
         gameActions.gameStatus.over = true
-        console.log('this is the fucking gameActions.gameStatus.over from the win: ', gameActions.gameStatus.over)
       }
     }
       // Vertical wins
@@ -80,7 +78,6 @@ const checkWin = function () {
           $('#game-board').off()
         }
         gameActions.gameStatus.over = true
-        console.log('this is the fucking gameActions.gameStatus.over from the win: ', gameActions.gameStatus.over)
       }
     }
     if (boxTwo !== '' && boxFive !== '' && boxEight !== '') {
@@ -93,7 +90,6 @@ const checkWin = function () {
           $('#game-board').off()
         }
         gameActions.gameStatus.over = true
-        console.log('this is the fucking gameActions.gameStatus.over from the win: ', gameActions.gameStatus.over)
       }
     }
     if (boxThree !== '' && boxSix !== '' && boxNine !== '') {
@@ -106,7 +102,6 @@ const checkWin = function () {
           $('#game-board').off()
         }
         gameActions.gameStatus.over = true
-        console.log('this is the fucking gameActions.gameStatus.over from the win: ', gameActions.gameStatus.over)
       }
     }
     // Diagnol wins
@@ -120,7 +115,6 @@ const checkWin = function () {
           $('#game-board').off()
         }
         gameActions.gameStatus.over = true
-        console.log('this is the fucking gameActions.gameStatus.over from the win: ', gameActions.gameStatus.over)
       }
     }
     // for some reason player 1 is always winning
@@ -134,14 +128,12 @@ const checkWin = function () {
           $('#game-board').off()
         }
         gameActions.gameStatus.over = true
-        console.log('this is the fucking gameActions.gameStatus.over from the win: ', gameActions.gameStatus.over)
       }
     }
   }
 // Maximum amount of moves
   if (turnCounter === 9) {
     gameActions.gameStatus.over = true
-    console.log('this is the fucking gameActions.gameStatus.over from the win: ', gameActions.gameStatus.over)
     gameActions.getGameUpdates()
     $('#game-text').text("Cat's Game!")
     $('#game-board').off()
@@ -175,7 +167,6 @@ const turnLogic = function (event) {
     }
   }
 }
-console.log('this is global game status: ')
 // New Game button, which should reset all squares to have a value of "''" and allow the users to start playing
 const getNewGame = function (event) {
   console.log('button clicked')
@@ -185,6 +176,7 @@ const getNewGame = function (event) {
   $('.game').each(function () {
     $(this).text('')
   })
+  gameActions.getStats()
 }
 
 // $('#game-board').on('click', function (event) {
