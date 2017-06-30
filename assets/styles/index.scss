@@ -1,22 +1,33 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+$game-box-height: 150px;
+
 .box {
   border: thin solid black;
-  height: 50px;
+  height: $game-box-height / 3;
 }
 
 .game {
-  height: 150px;
+  height: $game-box-height;
   text-align: center;
 }
 
 .game-text-box {
-  height: 75px;
+  height: $game-box-height / 2;
   text-align: center;
 }
 
 .game-title-box {
-  height: 100px;
+  height: $game-box-height * (2/3);
+  text-align: center;
+}
+
+.center-block {
+  float: none;
+}
+
+.game-announcements {
+  height: $game-box-height * 3.5;
   text-align: center;
 }
