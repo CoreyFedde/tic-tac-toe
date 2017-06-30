@@ -46,9 +46,11 @@ const onSignUp = function (event) {
   const data = getFormFields(event.target)
   signUp(data)
     .then(function (data) {
-      $('#sign-in-modal').modal('hide')
+      $('#sign-up-modal').modal('hide')
+      $('#robotText').text('SIGN UP WORKED!')
     })
     .catch(function (data) {
+      $('#robotText').text('Weird. That username was taken. Try it again!')
     })
 }
 
@@ -61,8 +63,10 @@ const onLogIn = function (event) {
     $('#sign-in-modal').modal('hide')
     $('#game-board').addClass('loggedIn')
     ui.hideButtons()
+    $('#robotText').text('Nice! You logged in! Now click on New Game to start a game!')
   })
   .catch(function (data) {
+    $('#robotText').text('Ooops! Something went wrong with the login. Remember to sign up first and try again')
   })
 }
 
@@ -72,8 +76,10 @@ const onChangePassword = function (event) {
   changePassword(data)
     .then(function (data) {
       $('#change-password-modal').modal('hide')
+      $('#robotText').text('Changing your password, huh? Good. The last one was garbage.')
     })
     .catch(function (data) {
+      $('#robotText').text('That change password attempt did not work.')
     })
 }
 
@@ -83,6 +89,7 @@ const onLogOut = function (event) {
   .then(function () {
     $('#game-board').removeClass('loggedIn')
     ui.hideButtons()
+    $('#robotText').text('Bye forever...')
   })
   .catch(function () {
   })
