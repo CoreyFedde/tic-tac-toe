@@ -31,6 +31,13 @@ $game-box-height: 150px;
   margin-bottom: 2%;
 }
 
+.btn-lg {
+  width: 300px;
+  height: $game-box-height / 2;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .center-block {
   float: none;
 }
@@ -41,4 +48,8 @@ $game-box-height: 150px;
   >ul {
     list-style: none;
   }
+}
+.navbar-btn {
+  margin-right: 15px;
+  margin-left: 15px;
 }

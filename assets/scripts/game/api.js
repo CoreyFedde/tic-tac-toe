@@ -46,7 +46,7 @@ const onSignUp = function (event) {
   const data = getFormFields(event.target)
   signUp(data)
     .then(function (data) {
-      $('#sign-in-modal').modal('hide')
+      $('#sign-up-modal').modal('hide')
     })
     .catch(function (data) {
     })
