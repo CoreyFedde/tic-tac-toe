@@ -177,9 +177,9 @@ const turnLogic = function (event) {
       $(event.target).text('X')
       $('#game-text').text('Your move Player 2')
       turnCounter++
+      getRandomSentenceForTwo()
       checkWin()
       gameActions.getGameUpdates()
-      getRandomSentenceForTwo()
     }
   } else {
     const value = $(event.target).text()
@@ -189,10 +189,10 @@ const turnLogic = function (event) {
       if (turnCounter === 0) {
         $('#robotText').text('Player 1, this part requires a friend. You have one of those right?')
       }
+      getRandomSentenceForOne()
       checkWin()
       gameActions.getGameUpdates()
       turnCounter++
-      getRandomSentenceForOne()
     }
   }
 }

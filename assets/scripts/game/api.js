@@ -63,7 +63,7 @@ const onLogIn = function (event) {
     $('#sign-in-modal').modal('hide')
     $('#game-board').addClass('loggedIn')
     ui.hideButtons()
-    $('#robotText').text('Nice! You logged in!')
+    $('#robotText').text('Nice! You logged in! Now click on New Game to start a game!')
   })
   .catch(function (data) {
     $('#robotText').text('Ooops! Something went wrong with the login. Remember to sign up first and try again')
