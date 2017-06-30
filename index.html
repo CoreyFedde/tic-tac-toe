@@ -36,8 +36,9 @@
 </nav>
 <div class="container">
   <div class="row">
-    <div id="game-title" class="col-sm-8 box game-title-box center-block">
+    <div id="game-title" class="col-sm-10 box game-title-box center-block">
       <h1>Tic-Tac-Toe</h1>
+      <h4>(with a robot assistant)</h4>
     </div>
   </div>
 </div>
@@ -48,40 +49,51 @@
       <p>Games played:</p>
       <div id="gamesDisplay" class="display-games"></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-4 box game-announcements">text</div>
-  </div>
-</div>
-<!-- Game Text Box -->
-<div class="container">
-  <div class="row">
-    <div id="game-text" class="col-sm-6 box game-text-box center-block">
-      <h3>Game Text</h3>
+    <div class="col-md-8">
+      <!-- Game Text Box -->
+      <div class="container">
+        <div class="row">
+          <div id="game-text" class="col-xs-offset-1 col-sm-6 box game-text-box">
+            <h3>Game Text</h3>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm-4 game-announcements">
+      <h3>Robot Assistant:</h3>
+      <ul>
+        <li>Okay....</li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <!-- Gameboard -->
+      <!-- Center block should help center, but am having trouble -->
+      <div id="game-board" class="container game-board center-block">
+        <div class="row">
+          <div id="box-1" class="col-xs-offset-1 col-xs-2 box game"></div>
+          <div id="box-2" class="col-xs-2 box game"></div>
+          <div id="box-3" class="col-xs-2 box game"></div>
+        </div>
+        <div class="row">
+          <div id="box-4" class="col-xs-offset-1 col-xs-2 box game"></div>
+          <div id="box-5" class="col-xs-2 box game"></div>
+          <div id="box-6" class="col-xs-2 box game"></div>
+        </div>
+        <div class="row">
+          <div id="box-7" class="col-xs-offset-1 col-xs-2 box game"></div>
+          <div id="box-8" class="col-xs-2 box game"></div>
+          <div id="box-9" class="col-xs-2 box game"></div>
+        </div>
+      </div>
+      <!-- Standard button for new game -->
+      <button id="new-game-button" type="button" class="btn btn-default btn-new-game center-block">New Game</button>
+  </div>
 </div>
-<!-- Gameboard -->
-<!-- Center block should help center, but am having trouble -->
-<div id="game-board" class="container game-board center-block">
-  <div class="row">
-    <div id="box-1" class="col-xs-offset-3 col-xs-2 box game"></div>
-    <div id="box-2" class="col-xs-2 box game"></div>
-    <div id="box-3" class="col-xs-2 box game"></div>
-  </div>
-  <div class="row">
-    <div id="box-4" class="col-xs-offset-3 col-xs-2 box game"></div>
-    <div id="box-5" class="col-xs-2 box game"></div>
-    <div id="box-6" class="col-xs-2 box game"></div>
-  </div>
-  <div class="row">
-    <div id="box-7" class="col-xs-offset-3 col-xs-2 box game"></div>
-    <div id="box-8" class="col-xs-2 box game"></div>
-    <div id="box-9" class="col-xs-2 box game"></div>
-  </div>
-</div>
-<!-- Standard button for new game -->
-<button id="new-game-button" type="button" class="btn btn-default center-block">New Game</button>
+
+
+
 
 <!-- Sign in -->
 <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
