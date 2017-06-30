@@ -153,18 +153,18 @@ const oneArray = [
 // Random response Player 2 array
 const twoArray = [
   'Player 2, I believe in you as a tic-tac-toe player and as a person.',
-  'Player 2, if you start to loose, just accidentally hit the New Game button.',
+  'Player 2, if you start to lose, just accidentally hit the New Game button.',
   'Player 2, that was a nice move.',
   'Player 2, thats right. YOU ARE DOING SO WELL!',
   'I am going to take a nap. Player 2, will you wake me when you win?'
 ]
 const getRandomSentenceForOne = function () {
-  const index = Math.floor(Math.random() * (oneArray.length - 1) )
+  const index = Math.floor(Math.random() * (oneArray.length - 1))
   const oneReply = oneArray[index]
   $('#robotText').text(oneReply)
 }
 const getRandomSentenceForTwo = function () {
-  const index = Math.floor(Math.random() * (twoArray.length - 1) )
+  const index = Math.floor(Math.random() * (twoArray.length - 1))
   const twoReply = twoArray[index]
   $('#robotText').text(twoReply)
 }
