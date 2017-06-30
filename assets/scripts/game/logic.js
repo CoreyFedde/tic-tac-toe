@@ -1,6 +1,7 @@
 'use strict'
 const gameActions = require('./gameActions.js')
 
+// Turn Counter variable
 let turnCounter = 0
 
 const checkWin = function () {
@@ -19,9 +20,11 @@ const checkWin = function () {
       if (boxOne === boxTwo && boxTwo === boxThree) {
         if (boxOne === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('#robotText').text('Player 1 you won! I always knew you could do it! To receive your prize, go to the root directory in your terminal and rm -rf something important.')
           $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
+          $('#robotText').text('Player 2, you are winning in the game and in life.')
           $('.game').off()
         }
         gameActions.gameStatus.over = true
@@ -32,8 +35,10 @@ const checkWin = function () {
         if (boxFour === 'X') {
           $('#game-text').text('Player 1 wins')
           $('.game').off()
+          $('#robotText').text('Player 1 you won! I always knew you could do it! To receive your prize, go to the root directory in your terminal and rm -rf something important.')
         } else {
           $('#game-text').text('Play 2 wins')
+          $('#robotText').text('Player 2, you are winning in the game and in life.')
           $('.game').off()
         }
         gameActions.gameStatus.over = true
@@ -43,9 +48,11 @@ const checkWin = function () {
       if (boxSeven === boxEight && boxEight === boxNine) {
         if (boxSeven === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('#robotText').text('Player 1 you won! I always knew you could do it! To receive your prize, go to the root directory in your terminal and rm -rf something important.')
           $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
+          $('#robotText').text('Player 2, you are winning in the game and in life.')
           $('.game').off()
         }
         gameActions.gameStatus.over = true
@@ -56,9 +63,11 @@ const checkWin = function () {
       if (boxOne === boxFour && boxFour === boxSeven) {
         if (boxOne === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('#robotText').text('Player 1 you won! I always knew you could do it! To receive your prize, go to the root directory in your terminal and rm -rf something important.')
           $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
+          $('#robotText').text('Player 2, you are winning in the game and in life.')
           $('.game').off()
         }
         gameActions.gameStatus.over = true
@@ -68,9 +77,11 @@ const checkWin = function () {
       if (boxTwo === boxFive && boxFive === boxEight) {
         if (boxTwo === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('#robotText').text('Player 1 you won! I always knew you could do it! To receive your prize, go to the root directory in your terminal and rm -rf something important.')
           $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
+          $('#robotText').text('Player 2, you are winning in the game and in life.')
           $('.game').off()
         }
         gameActions.gameStatus.over = true
@@ -80,9 +91,11 @@ const checkWin = function () {
       if (boxThree === boxSix && boxSix === boxNine) {
         if (boxThree === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('#robotText').text('Player 1 you won! I always knew you could do it! To receive your prize, go to the root directory in your terminal and rm -rf something important.')
           $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
+          $('#robotText').text('Player 2, you are winning in the game and in life.')
           $('.game').off()
         }
         gameActions.gameStatus.over = true
@@ -93,9 +106,11 @@ const checkWin = function () {
       if (boxOne === boxFive && boxFive === boxNine) {
         if (boxOne === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('#robotText').text('Player 1 you won! I always knew you could do it! To receive your prize, go to the root directory in your terminal and rm -rf something important.')
           $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
+          $('#robotText').text('Player 2, you are winning in the game and in life.')
           $('.game').off()
         }
         gameActions.gameStatus.over = true
@@ -105,9 +120,11 @@ const checkWin = function () {
       if (boxThree === boxFive && boxFive === boxSeven) {
         if (boxThree === 'X') {
           $('#game-text').text('Player 1 wins')
+          $('#robotText').text('Player 1 you won! I always knew you could do it! To receive your prize, go to the root directory in your terminal and rm -rf something important.')
           $('.game').off()
         } else {
           $('#game-text').text('Play 2 wins')
+          $('#robotText').text('Player 2, you are winning in the game and in life.')
           $('.game').off()
         }
         gameActions.gameStatus.over = true
@@ -119,8 +136,37 @@ const checkWin = function () {
     gameActions.gameStatus.over = true
     gameActions.getGameUpdates()
     $('#game-text').text("Cat's Game!")
+    $('#robotText').text('A tie? ANTICLIMACTIC.')
     $('.game').off()
   }
+}
+
+// Random response Player 1 array
+const oneArray = [
+  'Player 1, look at the Game Count above me. Think of all the minutes youve wasted...',
+  'Player 1, I just got a call from your mother. She is disappointed in that last move.',
+  'I am sorry for the insults Player 1. Its just been a long day and, well, you deserve them.',
+  'Player 1, can I get you anything? Soda, tea, a Tic-Tac-Toe guide for Dummies?',
+  'Wow, Player 1. That last move was pretty good. Player 2, get your shit together.',
+  'Player 1, I changed my mind. You are great at this. Quit your day job. Pursue this professionally. You will not regret it...'
+]
+// Random response Player 2 array
+const twoArray = [
+  'Player 2, I believe in you as a tic-tac-toe player and as a person.',
+  'Player 2, if you start to loose, just accidentally hit the New Game button.',
+  'Player 2, that was a nice move.',
+  'Player 2, thats right. YOU ARE DOING SO WELL!',
+  'I am going to take a nap. Player 2, will you wake me when you win?'
+]
+const getRandomSentenceForOne = function () {
+  const index = Math.floor(Math.random() * (oneArray.length - 1) )
+  const oneReply = oneArray[index]
+  $('#robotText').text(oneReply)
+}
+const getRandomSentenceForTwo = function () {
+  const index = Math.floor(Math.random() * (twoArray.length - 1) )
+  const twoReply = twoArray[index]
+  $('#robotText').text(twoReply)
 }
 
 // Below is the logic for the game-board, which is also linked to the game-text
@@ -130,18 +176,23 @@ const turnLogic = function (event) {
     if (value === '') {
       $(event.target).text('X')
       $('#game-text').text('Your move Player 2')
+      turnCounter++
       checkWin()
       gameActions.getGameUpdates()
-      turnCounter++
+      getRandomSentenceForTwo()
     }
   } else {
     const value = $(event.target).text()
     if (value === '') {
       $(event.target).text('O')
       $('#game-text').text('Your move Player 1')
+      if (turnCounter === 0) {
+        $('#robotText').text('Player 1, this part requires a friend. You have one of those right?')
+      }
       checkWin()
       gameActions.getGameUpdates()
       turnCounter++
+      getRandomSentenceForOne()
     }
   }
 }
@@ -157,6 +208,7 @@ const getNewGame = function (event) {
   // this line updates the stat box
   gameActions.getStats()
   $('.game').on('click', turnLogic)
+  $('#robotText').text('Now it is your turn Player 1. Try not to strain anything.')
 }
 
 module.exports = {

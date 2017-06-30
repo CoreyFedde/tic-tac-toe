@@ -21,6 +21,9 @@ $game-box-height: 150px;
   font-size: 30px;
 }
 
+.gameCount {
+  font-size: 20px;
+}
 .btn-new-game {
   margin-top: 5px;
 }
@@ -47,6 +50,7 @@ $game-box-height: 150px;
   border: thin solid black;
   >ul {
     list-style: none;
+    font-size: 15px;
   }
 }
 .navbar-btn {
