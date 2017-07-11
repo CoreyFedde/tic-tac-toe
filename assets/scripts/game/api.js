@@ -90,6 +90,7 @@ const onLogOut = function (event) {
     $('#game-board').removeClass('loggedIn')
     ui.hideButtons()
     $('#robotText').text('Bye forever...')
+    $('.form-control').val('')
   })
   .catch(function () {
   })

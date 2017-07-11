@@ -159,12 +159,12 @@ const twoArray = [
   'I am going to take a nap. Player 2, will you wake me when you win?'
 ]
 const getRandomSentenceForOne = function () {
-  const index = Math.floor(Math.random() * (oneArray.length - 1) )
+  const index = Math.floor(Math.random() * (oneArray.length - 1))
   const oneReply = oneArray[index]
   $('#robotText').text(oneReply)
 }
 const getRandomSentenceForTwo = function () {
-  const index = Math.floor(Math.random() * (twoArray.length - 1) )
+  const index = Math.floor(Math.random() * (twoArray.length - 1))
   const twoReply = twoArray[index]
   $('#robotText').text(twoReply)
 }
@@ -209,6 +209,7 @@ const getNewGame = function (event) {
   gameActions.getStats()
   $('.game').on('click', turnLogic)
   $('#robotText').text('Now it is your turn Player 1. Try not to strain anything.')
+  $('#game-board').show()
 }
 
 module.exports = {
