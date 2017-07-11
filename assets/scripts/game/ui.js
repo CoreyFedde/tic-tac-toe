@@ -4,7 +4,6 @@ const hideButtons = function () {
   if ($('#game-board').hasClass('loggedIn')) {
     $('#sign-out-button').show()
     $('#change-password-button').show()
-    $('#game-board').show()
     $('#new-game-button').show()
     $('.game-text-box').show()
     $('#sign-in-button').hide()

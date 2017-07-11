@@ -209,6 +209,7 @@ const getNewGame = function (event) {
   gameActions.getStats()
   $('.game').on('click', turnLogic)
   $('#robotText').text('Now it is your turn Player 1. Try not to strain anything.')
+  $('#game-board').show()
 }
 
 module.exports = {
