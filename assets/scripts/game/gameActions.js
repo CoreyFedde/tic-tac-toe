@@ -49,7 +49,6 @@ const getStats = function (event) {
 }
 
 const createNewGame = function (event) {
-  event.preventDefault()
   newGame()
   .then(function (data) {
     save.game = data.game

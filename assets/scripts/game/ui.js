@@ -11,9 +11,9 @@ const hideButtons = function () {
   } else {
     $('#sign-out-button').hide()
     $('#change-password-button').hide()
-    $('#game-board').hide()
-    $('#new-game-button').hide()
-    $('.game-text-box').hide()
+    // $('#game-board').hide()
+    // $('#new-game-button').hide()
+    // $('.game-text-box').hide()
     $('#sign-in-button').show()
     $('#sign-up-button').show()
   }
