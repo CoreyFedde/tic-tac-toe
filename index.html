@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>tic-tac-toe</title>
+  <title>RoboTic-tic-toe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags unless you know what you are doing -->
@@ -38,8 +38,7 @@
 <div class="container">
   <div class="row">
     <div id="game-title" class="col-sm-10 box game-title-box center-block">
-      <h1>Tic-Tac-Toe</h1>
-      <h4>(with a robot assistant)</h4>
+      <h1>RoboTic-Tac-Toe</h1>
     </div>
   </div>
 </div>
@@ -47,7 +46,7 @@
 <div id="gameCounter" class="container gameCount">
   <div class="row">
     <div class="col-xs-offset-1 col-sm-3 box">
-      <p>Games played:</p>
+      <h4>Games played:</h4>
       <div id="gamesDisplay" class="display-games"></div>
     </div>
     <div class="col-md-8">
@@ -55,7 +54,7 @@
       <div class="container">
         <div class="row">
           <div id="game-text" class="col-xs-offset-1 col-sm-6 box game-text-box">
-            <h3>Game Text</h3>
+            <h1>Game Text</h1>
           </div>
         </div>
       </div>
@@ -64,9 +63,7 @@
   <div class="row">
     <div class="col-sm-3 col-xs-offset-1 game-announcements">
       <h3>Robot Assistant:</h3>
-      <ul>
-        <li id="robotText">*beep boop*<br/> You should log in.......</li>
-      </ul>
+        <p id="robotText">*beep boop*<br/> You should log in.......</p>
     </div>
     <div class="col-md-8">
       <!-- Gameboard -->
@@ -88,7 +85,7 @@
         </div>
       </div>
       <!-- Standard button for new game -->
-      <button id="new-game-button" type="button" class="btn btn-success btn-md btn-new-game center-block">New Game</button>
+      <button id="new-game-button" type="button" class="btn btn-primary btn-md btn-new-game center-block">New Game</button>
   </div>
 </div>
 

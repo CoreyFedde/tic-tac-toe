@@ -3,22 +3,38 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 $game-box-height: 150px;
 
+html,
+body {
+  background: url(https://static.pexels.com/photos/50711/board-electronics-computer-data-processing-50711.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .box {
+  background-color: 	#65888C;
   border: thin solid black;
   height: $game-box-height / 2;
   text-align: center;
+  color: white;
 }
 
 .game {
   height: $game-box-height;
   text-align: center;
   font-size: 20px;
+  background-color: #EFE7D2;
+  font-size: 100px;
+  color: white;
+  text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
 }
 
 .game-text-box {
   height: $game-box-height / 2;
   text-align: center;
   font-size: 30px;
+  color: white;
 }
 
 .gameCount {
@@ -32,6 +48,14 @@ $game-box-height: 150px;
   height: $game-box-height * (2/3);
   text-align: center;
   margin-bottom: 2%;
+  background: url(http://i.imgur.com/IyXMk0l.jpg) no-repeat;
+  background-size: cover;
+  color: white;
+  >h1 {
+    line-height: 70px;
+    font-size: 50px;
+    text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
+  }
 }
 
 .center-block {
@@ -41,9 +65,18 @@ $game-box-height: 150px;
 .game-announcements {
   height: $game-box-height * 3;
   border: thin solid black;
+  background-color: 	#EFE7D2;
   >ul {
     list-style: none;
     font-size: 15px;
+  }
+}
+.navbar{
+  background-color: black;
+  border: none;
+  >navbar-brand{
+    color: white;
+    background-color: white;
   }
 }
 .navbar-btn {

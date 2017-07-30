@@ -25,6 +25,7 @@ const checkWin = function () {
     if ($('#game-board').hasClass('loggedIn')) {
       gameActions.getGameUpdates()
     }
+    $('#game-text').css('background-color', 'blue')
   }
   // Horizontal wins
   if (boxOne !== '' && boxTwo !== '' && boxThree !== '') {
@@ -39,6 +40,7 @@ const checkWin = function () {
         $('.game').off()
       }
       gameActions.gameStatus.over = true
+      $('#game-text').css('background-color', 'blue')
     }
   } else if (boxFour !== '' && boxFive !== '' && boxSix !== '') {
     if (boxFour === boxFive && boxFive === boxSix) {
@@ -52,6 +54,7 @@ const checkWin = function () {
         $('.game').off()
       }
       gameActions.gameStatus.over = true
+      $('#game-text').css('background-color', 'blue')
     }
   } else if (boxSeven !== '' && boxEight !== '' && boxNine !== '') {
     if (boxSeven === boxEight && boxEight === boxNine) {
@@ -65,6 +68,7 @@ const checkWin = function () {
         $('.game').off()
       }
       gameActions.gameStatus.over = true
+      $('#game-text').css('background-color', 'blue')
     }
   }
     // Vertical wins
@@ -80,6 +84,7 @@ const checkWin = function () {
         $('.game').off()
       }
       gameActions.gameStatus.over = true
+      $('#game-text').css('background-color', 'blue')
     }
   } else if (boxTwo !== '' && boxFive !== '' && boxEight !== '') {
     if (boxTwo === boxFive && boxFive === boxEight) {
@@ -93,6 +98,7 @@ const checkWin = function () {
         $('.game').off()
       }
       gameActions.gameStatus.over = true
+      $('#game-text').css('background-color', 'blue')
     }
   } else if (boxThree !== '' && boxSix !== '' && boxNine !== '') {
     if (boxThree === boxSix && boxSix === boxNine) {
@@ -106,6 +112,7 @@ const checkWin = function () {
         $('.game').off()
       }
       gameActions.gameStatus.over = true
+      $('#game-text').css('background-color', 'blue')
     }
   }
   // Diagnol wins
@@ -121,6 +128,7 @@ const checkWin = function () {
         $('.game').off()
       }
       gameActions.gameStatus.over = true
+      $('#game-text').css('background-color', 'blue')
     }
   } else if (boxThree !== '' && boxFive !== '' && boxSeven !== '') {
     if (boxThree === boxFive && boxFive === boxSeven) {
@@ -134,6 +142,7 @@ const checkWin = function () {
         $('.game').off()
       }
       gameActions.gameStatus.over = true
+      $('#game-text').css('background-color', 'blue')
     }
   }
 }
@@ -217,6 +226,7 @@ const getNewGame = function (event) {
     gameActions.getStats()
     gameActions.createNewGame()
   }
+  $('#game-text').css('background-color', '#65888C')
 }
 
 module.exports = {
