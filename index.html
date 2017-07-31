@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>RoboTic-tic-toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <style>
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto+Mono');
+</style>
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://github.com/CoreyFedde">Corey Fedde</a>
+    </div>
+    <!-- Button for sign in -->
+    <button id="sign-in-button" type="button" class="btn btn-success navbar-btn navbar-right" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
+    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+    <button id="sign-up-button" type="button" class="btn btn-primary navbar-btn navbar-right" data-toggle="modal" data-target="#sign-up-modal">Sign up</button>
+    <!-- button for sign out -->
+    <button id="sign-out-button" type="button" class="btn btn-danger navbar-btn navbar-right">Sign out</button>
+    <!-- Button for change password -->
+    <button id="change-password-button" type="button" class="btn btn-info navbar-btn navbar-right" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<!-- Content -->
+<div class="container">
+  <div class="row">
+    <div id="game-title" class="col-sm-7 box game-title-box center-block">
+      <h1>RoboTic-Tac-Toe</h1>
+    </div>
+  </div>
+</div>
+
+
+<!-- Game counter -->
+<div id="gameCounter" class="container gameCount">
+  <div class="row">
+    <div class="col-sm-2 col-xs-offset-2 games-played box">
+      <h4>Games played: <span id="gamesDisplay" class="display-games">...</span></h4>
+      <br>
+      <div class="row">
+        <div class="col-sm-12 game-announcements">
+          <h5>Robot Assistant:</h5>
+          <p id="robotText">*beep boop*<br/> You should log in.......</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <!-- Gameboard -->
+      <!-- <div id="game-text" class="container game-text center-block"> -->
+        <div class="row">
+          <div id="game-text" class="col-xs-offset-1 col-sm-9 box game-text-box">
+            <p>Game Text</p>
+          </div>
+        </div>
+        <div class="row">
+          <div id="box-1" class="col-xs-offset-1 col-xs-3 box game"></div>
+          <div id="box-2" class="col-xs-3 box game"></div>
+          <div id="box-3" class="col-xs-3 box game"></div>
+        </div>
+        <div class="row">
+          <div id="box-4" class="col-xs-offset-1 col-xs-3 box game"></div>
+          <div id="box-5" class="col-xs-3 box game"></div>
+          <div id="box-6" class="col-xs-3 box game"></div>
+        </div>
+        <div class="row">
+          <div id="box-7" class="col-xs-offset-1 col-xs-3 box game"></div>
+          <div id="box-8" class="col-xs-3 box game"></div>
+          <div id="box-9" class="col-xs-3 box game"></div>
+        </div>
+        <!-- Standard button for new game -->
+        <div class="row">
+          <div class="col-xs-9 col-xs-offset-1">
+        <button id="new-game-button" type="button" class="btn btn-primary btn-lg btn-new-game center-block">New Game</button>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+
+
+
+<!-- Modals -->
+<!-- Sign in -->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body">
+        <form id="signInForm">
+          <div class="form-group">
+            <!-- Form for Sign IN -->
+            <label for="exampleInputEmail1">Email address</label>
+            <input name="credentials[email]" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input name="credentials[password]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sign UP Modal -->
+<div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <!-- Form for Sign UP -->
+        <form id="signUpForm">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input name="credentials[email]" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input name="credentials[password]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Confirm Password</label>
+            <input name="credentials[password_confirmation]" type="password" class="form-control" id="confirmExampleInputPassword1" placeholder="Password">
+          </div>
+          <button id="submitSignUp" type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- change password -->
+<div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+      </div>
+      <div class="modal-body">
+        <form id="changePasswordForm">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Current Password</label>
+            <input name="passwords[old]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Current Password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">New Password</label>
+            <input name="passwords[new]" type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</html>
