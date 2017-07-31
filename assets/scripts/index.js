@@ -17,7 +17,7 @@ $(() => {
   $('#changePasswordForm').on('submit', api.onChangePassword)
   $('#sign-out-button').on('click', api.onLogOut)
   $('#gameActionButton').on('click', gameActions.getStats)
-  $('#new-game-button').on('click', gameActions.createNewGame)
+  // $('#new-game-button').on('click', gameActions.createNewGame)
 })
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
