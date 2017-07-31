@@ -22,7 +22,7 @@ const checkWin = function () {
     $('#game-text').text("Cat's Game!")
     $('#robotText').text('A tie? ANTICLIMACTIC.')
     $('.game').off()
-    if ($('#game-board').hasClass('loggedIn')) {
+    if ($('#game-text').hasClass('loggedIn')) {
       gameActions.getGameUpdates()
     }
     $('#game-text').css('background-color', 'blue')
@@ -153,7 +153,7 @@ const oneArray = [
   'Player 1, I just got a call from your mother. She is disappointed in that last move.',
   'I am sorry for the insults Player 1. Its just been a long day and, well, you deserve them.',
   'Player 1, can I get you anything? Soda, tea, a Tic-Tac-Toe guide for Dummies?',
-  'Wow, Player 1. That last move was pretty good. Player 2, get your shit together.',
+  'Wow, Player 1. That last move was pretty good. Player 2, get your game together.',
   'Player 1, I changed my mind. You are great at this. Quit your day job. Pursue this professionally. You will not regret it...'
 ]
 // Random response Player 2 array
@@ -175,7 +175,7 @@ const getRandomSentenceForTwo = function () {
   $('#robotText').text(twoReply)
 }
 
-// Below is the logic for the game-board, which is also linked to the game-text
+// Below is the logic for the game-text, which is also linked to the game-text
 const turnLogic = function (event) {
   if (turnCounter % 2 === 0) {
     const value = $(event.target).text()
@@ -183,11 +183,9 @@ const turnLogic = function (event) {
       $(event.target).text('X')
       $('#game-text').text('Your move Player 2')
       turnCounter++
+      getRandomSentenceForOne()
       checkWin()
-      if (!gameActions.gameStatus.over) {
-        getRandomSentenceForOne()
-      }
-      if ($('#game-board').hasClass('loggedIn')) {
+      if ($('#game-text').hasClass('loggedIn')) {
         gameActions.getGameUpdates()
       }
     }
@@ -200,11 +198,9 @@ const turnLogic = function (event) {
         $('#robotText').text('Player 1, this part requires a friend. You have one of those right?')
       }
       turnCounter++
+      getRandomSentenceForTwo()
       checkWin()
-      if (!gameActions.gameStatus.over) {
-        getRandomSentenceForTwo()
-      }
-      if ($('#game-board').hasClass('loggedIn')) {
+      if ($('#game-text').hasClass('loggedIn')) {
         gameActions.getGameUpdates()
       }
     }
@@ -214,19 +210,19 @@ const turnLogic = function (event) {
 // New Game button, which should reset all squares to have a value of "''" and allow the users to start playing
 const getNewGame = function (event) {
   $('#game-text').text('New game!')
-  turnCounter = 0
-  // Create an array to represent the game-board
+  // Create an array to represent the game-text
   $('.game').each(function () {
     $(this).text('')
   })
   $('.game').on('click', turnLogic)
   $('#robotText').text('Now it is your turn Player 1. Try not to strain anything.')
   // this line updates the stat box
-  if ($('#game-board').hasClass('loggedIn')) {
+  if ($('#game-text').hasClass('loggedIn')) {
     gameActions.getStats()
     gameActions.createNewGame()
   }
   $('#game-text').css('background-color', '#65888C')
+  turnCounter = 0
 }
 
 module.exports = {

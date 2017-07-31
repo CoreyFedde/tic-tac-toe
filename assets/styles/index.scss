@@ -11,10 +11,9 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-
 .box {
   background-color: 	#65888C;
-  border: thin solid black;
+  border: thin solid grey;
   height: $game-box-height / 2;
   text-align: center;
   color: white;
@@ -29,16 +28,21 @@ body {
   color: white;
   text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
 }
+.game:hover {
+    background-color: #5E9A5C;
+}
 
 .game-text-box {
   height: $game-box-height / 2;
   text-align: center;
-  font-size: 30px;
+  font-size: 50px;
   color: white;
+  font-family: 'Oswald', sans-serif;
 }
-
+.games-played {
+  font-family: 'Oswald', sans-serif;
+}
 .gameCount {
-  font-size: 20px;
 }
 .btn-new-game {
   margin-top: 5px;
@@ -48,8 +52,9 @@ body {
   height: $game-box-height * (2/3);
   text-align: center;
   margin-bottom: 2%;
-  background: url(http://i.imgur.com/IyXMk0l.jpg) no-repeat;
-  background-size: cover;
+  background-color: #EFE7D2;
+  border-color: #65888C;
+  border-width: thick;
   color: white;
   >h1 {
     line-height: 70px;
@@ -63,13 +68,11 @@ body {
 }
 
 .game-announcements {
-  height: $game-box-height * 3;
+  height: $game-box-height * 2;
   border: thin solid black;
   background-color: 	#EFE7D2;
-  >ul {
-    list-style: none;
-    font-size: 15px;
-  }
+  color: black;
+  font-family: 'Roboto Mono', monospace;
 }
 .navbar{
   background-color: black;

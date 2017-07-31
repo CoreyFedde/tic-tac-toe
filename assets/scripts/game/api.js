@@ -63,7 +63,7 @@ const onLogIn = function (event) {
   .then(function (data) {
     store.user = data.user
     $('#sign-in-modal').modal('hide')
-    $('#game-board').addClass('loggedIn')
+    $('#game-text').addClass('loggedIn')
     ui.hideButtons()
     $('#robotText').text('Nice! You logged in! Now click on New Game to start a game!')
   })
@@ -89,7 +89,7 @@ const onLogOut = function (event) {
   event.preventDefault()
   logOut()
   .then(function () {
-    $('#game-board').removeClass('loggedIn')
+    $('#game-text').removeClass('loggedIn')
     ui.hideButtons()
     $('#robotText').text('Bye forever...')
     $('.form-control').val('')
